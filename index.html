@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulateur d&#x27;Impact Énergétique d&#x27;Équipements Domestiques | Votre Bilan Énergétique Personnalisé</title>
+    <meta name="description" content="Calculez la consommation électrique estimée et l">
+    <style>
+        :root {
+            --primary-green: #008000;
+            --secondary-yellow: #FFD700;
+            --background-light: #F0F8F0;
+            --text-dark: #333;
+            --text-light: #fff;
+            --border-color: #A9D18E;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: var(--background-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary-green) 0%, #33B249 100%);
+            color: var(--text-light);
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 8px var(--shadow-color);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.8rem;
+            letter-spacing: -0.05em;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 1rem auto 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 2rem auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                grid-template-columns: 2fr 1fr;
+            }
+        }
+
+        .tool-section, .info-section {
+            background-color: var(--text-light);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px var(--shadow-color);
+        }
+
+        .tool-section h2, .info-section h3 {
+            color: var(--primary-green);
+            margin-top: 0;
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: var(--text-dark);
+        }
+
+        form select, form input[type="number"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 1rem;
+        }
+
+        form button {
+            background-color: var(--primary-green);
+            color: var(--text-light);
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        form button:hover {
+            background-color: #33B249;
+        }
+
+        #tool-result {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background-color: #e9f5e9;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 1.1rem;
+            color: var(--text-dark);
+        }
+
+        #tool-result h4 {
+            color: var(--primary-green);
+            margin-top: 0;
+        }
+
+        .info-section {
+            background-color: #f9fdf9;
+            border-left: 5px solid var(--primary-green);
+        }
+
+        .info-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-section li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .info-section li::before {
+            content: '🌿';
+            position: absolute;
+            left: 0;
+            color: var(--primary-green);
+        }
+
+        .call-to-action {
+            text-align: center;
+            margin: 3rem 0;
+            padding: 2rem;
+            background: linear-gradient(45deg, #CCE6CC 0%, #E0F2E0 100%);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px var(--shadow-color);
+            width: 90%;
+            max-width: 800px;
+        }
+
+        .call-to-action h3 {
+            color: var(--primary-green);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .call-to-action p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .call-to-action button {
+            background-color: var(--secondary-yellow);
+            color: var(--text-dark);
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .call-to-action button:hover {
+            background-color: #FFEA00;
+        }
+
+        footer {
+            width: 100%;
+            background-color: var(--text-dark);
+            color: var(--text-light);
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .seo-section {
+            width: 90%;
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .seo-section h3 {
+            color: var(--primary-green);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://simulateur-d-impact-energetique-d-equipements-d-42d84224.onrender.com">
+    <meta property="og:title" content="Simulateur d&#x27;Impact Énergétique d&#x27;Équipements Domestiques">
+    <meta property="og:description" content="Calculez la consommation électrique estimée et l">
+    <meta property="og:url" content="https://simulateur-d-impact-energetique-d-equipements-d-42d84224.onrender.com">
+    <meta property="og:type" content="website">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Simulateur d'Impact Énergétique d'Équipements Domestiques", "description": "Calculez la consommation électrique estimée et l", "url": "https://simulateur-d-impact-energetique-d-equipements-d-42d84224.onrender.com", "applicationCategory": "UtilityApplication", "operatingSystem": "Web Browser"}</script>
+</head>
+<body data-site-slug="simulateur-d-impact-energetique-d-equipements-d-42d84224" data-runtime-mode="energy_score_calculator">
+    <header>
+        <h1>Simulateur d'Impact Énergétique Domestique</h1>
+        <p>Estimez la consommation électrique et l'empreinte carbone de vos appareils pour des choix plus verts et économes. Agissez pour un futur durable, dès aujourd'hui.</p>
+    </header>
+
+    <div class="container">
+        <div class="tool-section">
+            <h2>Votre Bilan Énergétique Personnalisé</h2>
+            <form id="tool-form">
+                <label for="device">Sélectionnez votre appareil :</label>
+                <select id="device" name="device">
+                    <option value="frigo">Réfrigérateur (150W)</option>
+                    <option value="lave-linge">Lave-linge (2000W)</option>
+                    <option value="tele">Télévision (100W)</option>
+                    <option value="ordinateur">Ordinateur Portable (50W)</option>
+                    <option value="four">Four Électrique (2500W)</option>
+                    <option value="micro-ondes">Micro-ondes (1000W)</option>
+                    <option value="bouilloire">Bouilloire (2200W)</option>
+                    <option value="seche-linge">Sèche-linge (2500W)</option>
+                    <option value="lave-vaisselle">Lave-vaisselle (1500W)</option>
+                    <option value="fer-a-repasser">Fer à repasser (1800W)</option>
+                </select>
+
+                <label for="usage-hours">Heures d'utilisation par jour :</label>
+                <input type="number" id="usage-hours" name="usage-hours" min="0" max="24" value="1">
+
+                <label for="usage-days">Jours d'utilisation par semaine :</label>
+                <input type="number" id="usage-days" name="usage-days" min="0" max="7" value="7">
+                
+                <button type="submit" id="tool-submit">Calculer mon impact</button>
+            </form>
+
+            <div id="tool-result">
+                <h4>Vos Résultats :</h4>
+                <p>Sélectionnez un appareil et entrez vos données pour estimer sa consommation.</p>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3>Pourquoi calculer ?</h3>
+            <p>Comprendre la consommation de vos appareils est le premier pas vers une gestion énergétique plus intelligente.</p>
+            <ul>
+                <li>🌿 Réduisez vos factures d'électricité.</li>
+                <li>🌿 Diminuez votre empreinte carbone.</li>
+                <li>🌿 Identifiez les appareils énergivores.</li>
+                <li>🌿 Prenez des décisions d'achat éclairées.</li>
+                <li>🌿 Contribuez à un avenir plus vert.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="call-to-action">
+        <h3>Prêt à optimiser votre consommation ?</h3>
+        <p>Chaque petit geste compte. Découvrez comment des ajustements simples peuvent faire une grande différence pour votre portefeuille et la planète.</p>
+        <button data-affiliate-slot="premium-guide-cta">Découvrir les Astuces Éco-Gestes</button>
+    </div>
+
+    <div class="seo-section">
+        <h3>Recherches associées et informations complémentaires</h3>
+        <p>Vous cherchez à <strong>réduire votre facture d'électricité</strong> ou à mieux comprendre votre <strong>consommation énergétique domestique</strong> ? Notre simulateur vous aide à calculer précisément l'<strong>impact écologique de vos appareils électroménagers</strong>. Que ce soit pour un <strong>lave-linge économe</strong>, un <strong>réfrigérateur basse consommation</strong>, ou simplement estimer le <strong>coût de l'énergie</strong> de votre télévision, nous vous offrons des données claires pour faire des <strong>économies d'énergie</strong>. Apprenez à <strong>optimiser votre consommation électrique</strong> et à réduire votre <strong>empreinte carbone maison</strong> en France. Notre outil de <strong>calcul d'énergie</strong> est idéal pour les foyers soucieux de leur budget et de l'environnement, cherchant des solutions pour une <strong>maison plus verte</strong> et des <strong>appareils moins énergivores</strong>. Utilisez ce <strong>simulateur d'électricité</strong> pour des conseils pratiques sur la <strong>gestion énergétique</strong> et la <strong>sobriété énergétique</strong>.</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Simulateur Énergétique. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('tool-form');
+            const resultDiv = document.getElementById('tool-result');
+
+            const devicePower = {
+                "frigo": 150,
+                "lave-linge": 2000,
+                "tele": 100,
+                "ordinateur": 50,
+                "four": 2500,
+                "micro-ondes": 1000,
+                "bouilloire": 2200,
+                "seche-linge": 2500,
+                "lave-vaisselle": 1500,
+                "fer-a-repasser": 1800
+            };
+
+            const carbonIntensityFrance = 0.057; // kg CO2e / kWh (valeur indicative pour la France, peu carbonée)
+            const electricityCostFrance = 0.25; // € / kWh (valeur indicative pour la France)
+
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+
+                const deviceSelect = document.getElementById('device');
+                const selectedDevice = deviceSelect.value;
+                const hoursPerDay = parseFloat(document.getElementById('usage-hours').value);
+                const daysPerWeek = parseFloat(document.getElementById('usage-days').value);
+
+                if (isNaN(hoursPerDay) || isNaN(daysPerWeek) || hoursPerDay < 0 || daysPerWeek < 0) {
+                    resultDiv.innerHTML = "<h4>Erreur de saisie :</h4><p>Veuillez entrer des nombres valides pour les heures et les jours.</p>";
+                    return;
+                }
+
+                const powerWatts = devicePower[selectedDevice];
+                const powerKw = powerWatts / 1000; // Convertir en kW
+
+                const usageHoursPerYear = hoursPerDay * daysPerWeek * (365 / 7); // Heures par an
+                const annualConsumptionKWh = powerKw * usageHoursPerYear;
+                const annualCost = annualConsumptionKWh * electricityCostFrance;
+                const annualCarbonImpactKg = annualConsumptionKWh * carbonIntensityFrance;
+
+                resultDiv.innerHTML = `
+                    <h4>Résultats pour votre ${deviceSelect.options[deviceSelect.selectedIndex].text} :</h4>
+                    <p><strong>Consommation annuelle estimée :</strong> ${annualConsumptionKWh.toFixed(2)} kWh</p>
+                    <p><strong>Coût annuel estimé :</strong> ${annualCost.toFixed(2)} €</p>
+                    <p><strong>Impact carbone annuel estimé :</strong> ${annualCarbonImpactKg.toFixed(2)} kg de CO2e</p>
+                    <p class="small-text">Ces estimations sont basées sur une puissance moyenne de l'appareil et les tarifs indicatifs de l'électricité en France.</p>
+                `;
+            });
+        });
+    </script>
+<div id="qa-smoke-result" hidden></div>
+<script id="farmbuilder-affiliate-helper">
+(function () {
+  window.__UTILITY_AFFILIATE_MAP = window.__UTILITY_AFFILIATE_MAP || {};
+  document.addEventListener("click", function (event) {
+    const target = event.target.closest("[data-affiliate-slot]");
+    if (!target) return;
+    const slot = target.getAttribute("data-affiliate-slot");
+    const href = window.__UTILITY_AFFILIATE_MAP[slot];
+    if (!href) return;
+    if (target.tagName && target.tagName.toLowerCase() === "a") {
+      target.setAttribute("href", href);
+      target.setAttribute("rel", "nofollow sponsored noopener noreferrer");
+      return;
+    }
+    event.preventDefault();
+    window.open(href, "_blank", "noopener");
+  }, true);
+})();
+</script>
+<script id="farmbuilder-functional-qa">
+(function () {
+  function marker() {
+    let node = document.getElementById("qa-smoke-result");
+    if (node) return node;
+    node = document.createElement("div");
+    node.id = "qa-smoke-result";
+    node.hidden = true;
+    document.body.appendChild(node);
+    return node;
+  }
+
+  let qaFinished = false;
+  let qaWatchdog = null;
+
+  function normalize(text) {
+    return String(text || "").replace(/\s+/g, " ").trim();
+  }
+
+  function findForm() {
+    return document.getElementById("tool-form") || document.querySelector("form");
+  }
+
+  function findResult() {
+    return (
+      document.getElementById("tool-result") ||
+      document.querySelector("[data-result]") ||
+      document.querySelector(".tool-result, .result-card, .result, .results, .output, .preview, .diagnostic, .analysis")
+    );
+  }
+
+  function primaryAction(form) {
+    if (!form) return null;
+    return (
+      document.getElementById("tool-submit") ||
+      form.querySelector("#tool-submit") ||
+      form.querySelector("[data-primary-action]") ||
+      form.querySelector("button[type=submit]") ||
+      form.querySelector("button") ||
+      form.querySelector("input[type=submit]")
+    );
+  }
+
+  function resultSignature(node) {
+    if (!node) return "";
+    const text = normalize(node.textContent);
+    const html = normalize(node.innerHTML).slice(0, 600);
+    return `${text}||${html}`;
+  }
+
+  function resultHeadline(node) {
+    if (!node) return "";
+    const heading = node.querySelector("h1, h2, h3, strong, b");
+    return normalize(heading ? heading.textContent : "");
+  }
+
+  function sampleText(field) {
+    const key = `${field.id || ""} ${field.name || ""} ${field.placeholder || ""}`.toLowerCase();
+    if (/email/.test(key)) return "bonjour@example.com";
+    if (/url|site|website|lien/.test(key)) return "https://example.com/offre-solaire";
+    if (/phone|tel|mobile/.test(key)) return "0612345678";
+    if (/ville|city|localisation|location|region|departement|postal/.test(key)) return "Paris";
+    if (/orientation/.test(key)) return "sud";
+    if (/keyword|theme|topic|sujet|subject/.test(key)) return "energie solaire domestique";
+    if (/titre|title/.test(key)) return "Simulateur solaire maison";
+    if (/nom|name|project/.test(key)) return "Projet Horizon";
+    if (/description|notes|content|message/.test(key)) return "Maison individuelle exposee sud avec toiture exploitable.";
+    return field.placeholder || "France";
+  }
+
+  function sampleNumber(field) {
+    const key = `${field.id || ""} ${field.name || ""}`.toLowerCase();
+    if (/inclinaison|angle|slope/.test(key)) return "30";
+    if (/surface|size|m2|sqm/.test(key)) return "28";
+    if (/annee|year/.test(key)) return "2024";
+    if (/prix|price|budget|cost|amount|montant/.test(key)) return "12000";
+    const min = Number(field.min || "");
+    const max = Number(field.max || "");
+    if (Number.isFinite(min) && Number.isFinite(max) && max >= min) {
+      return String(Math.min(max, Math.max(min, min + Math.round((max - min) * 0.35))));
+    }
+    if (Number.isFinite(min)) return String(Math.max(min, 12));
+    if (Number.isFinite(max)) return String(Math.min(max, 12));
+    return field.value || "12";
+  }
+
+  function applySample(field) {
+    const tag = (field.tagName || "").toLowerCase();
+    const type = (field.type || "").toLowerCase();
+    if (field.disabled) return;
+    if (type === "hidden" || type === "submit" || type === "button" || type === "reset" || type === "image" || type === "file") {
+      return;
+    }
+    const currentValue = normalize(field.value);
+    if (tag === "select") {
+      if (currentValue) return;
+      const option = Array.from(field.options || []).find((item) => item.value && !item.disabled) || field.options[0];
+      if (option) field.value = option.value;
+      return;
+    }
+    if (type === "checkbox") {
+      if (field.checked) return;
+      field.checked = true;
+      return;
+    }
+    if (type === "radio") {
+      if (field.checked) return;
+      field.checked = true;
+      return;
+    }
+    if (type === "date") {
+      if (currentValue) return;
+      field.value = "2026-03-01";
+      return;
+    }
+    if (type === "email") {
+      if (currentValue) return;
+      field.value = "bonjour@example.com";
+      return;
+    }
+    if (type === "url") {
+      if (currentValue) return;
+      field.value = "https://example.com/offre-solaire";
+      return;
+    }
+    if (type === "tel") {
+      if (currentValue) return;
+      field.value = "0612345678";
+      return;
+    }
+    if (type === "color") {
+      if (currentValue) return;
+      field.value = "#2f855a";
+      return;
+    }
+    if (type === "number" || type === "range") {
+      if (currentValue) return;
+      field.value = sampleNumber(field);
+      return;
+    }
+    if (currentValue) return;
+    field.value = sampleText(field);
+  }
+
+  function stamp(status, detail, headline, primary) {
+    if (qaFinished) return;
+    qaFinished = true;
+    if (qaWatchdog) {
+      window.clearTimeout(qaWatchdog);
+      qaWatchdog = null;
+    }
+    const node = marker();
+    node.dataset.status = status;
+    node.dataset.mode = "native-form";
+    node.dataset.detail = detail || "";
+    node.dataset.headline = headline || "";
+    node.dataset.primary = primary || "";
+    node.dataset.viewport = window.innerWidth <= 640 ? "mobile" : "desktop";
+    window.setTimeout(function () {
+      try {
+        window.stop();
+      } catch (_error) {}
+    }, 0);
+  }
+
+  function installModalGuards() {
+    const noop = function () {};
+    const approve = function () { return true; };
+    const empty = function () { return ""; };
+    try { window.alert = noop; } catch (_error) {}
+    try { window.confirm = approve; } catch (_error) {}
+    try { window.prompt = empty; } catch (_error) {}
+  }
+
+  function triggerAction(form, action) {
+    try {
+      if (typeof form.requestSubmit === "function") {
+        form.requestSubmit(action || undefined);
+        return;
+      }
+    } catch (_error) {}
+    if (action && typeof action.click === "function") {
+      action.click();
+      return;
+    }
+    form.dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));
+  }
+
+  function inspectResult(before, attemptsLeft) {
+    const result = findResult();
+    if (!result) {
+      stamp("fail", "La zone de resultat est introuvable.", "");
+      return;
+    }
+    const after = resultSignature(result);
+    const text = normalize(result.textContent);
+    if (after && after !== before && text.length >= 24) {
+      const primary = result.querySelector("a[href], button[data-href], [data-primary-url]") || document.querySelector("#tool-result a[href]");
+      stamp("pass", "Le formulaire natif a mis a jour la zone de resultat.", resultHeadline(result), primary ? (primary.getAttribute("href") || primary.getAttribute("data-primary-url") || "") : "");
+      return;
+    }
+    if (attemptsLeft > 0) {
+      window.setTimeout(function () {
+        inspectResult(before, attemptsLeft - 1);
+      }, 250);
+      return;
+    }
+    stamp("fail", "La zone de resultat n'a pas renvoye de contenu exploitable.", resultHeadline(result));
+  }
+
+  function runSmoke() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("__qa") !== "functional") return;
+    qaWatchdog = window.setTimeout(function () {
+      stamp("fail", "QA smoke timed out before the page reported a usable result.", "");
+    }, 7000);
+    const form = findForm();
+    if (!form) {
+      stamp("fail", "Le formulaire principal est introuvable.", "");
+      return;
+    }
+    const result = findResult();
+    const before = resultSignature(result);
+    installModalGuards();
+    try {
+      form.querySelectorAll("input, select, textarea").forEach(applySample);
+    } catch (error) {
+      stamp("fail", error && error.message ? `QA smoke sample failed: ${error.message}` : "QA smoke sample failed before submit.", "");
+      return;
+    }
+    const action = primaryAction(form);
+    try {
+      triggerAction(form, action);
+    } catch (error) {
+      stamp("fail", error && error.message ? `QA smoke submit failed: ${error.message}` : "QA smoke submit failed.", "");
+      return;
+    }
+    inspectResult(before, 10);
+  }
+
+  window.addEventListener("error", function (event) {
+    const message = event && event.message ? event.message : "JavaScript runtime error during QA smoke.";
+    stamp("fail", `QA smoke JS error: ${message}`, "");
+  }, { once: true });
+
+  window.addEventListener("unhandledrejection", function (event) {
+    const reason = event && event.reason;
+    const detail = typeof reason === "string"
+      ? reason
+      : reason && reason.message
+        ? reason.message
+        : "Unhandled promise rejection during QA smoke.";
+    stamp("fail", `QA smoke rejection: ${detail}`, "");
+  }, { once: true });
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", function () {
+      window.setTimeout(runSmoke, 60);
+    }, { once: true });
+  } else {
+    window.setTimeout(runSmoke, 60);
+  }
+})();
+</script>
+</body>
+</html>
