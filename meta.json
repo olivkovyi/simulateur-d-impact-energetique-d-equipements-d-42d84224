@@ -1,0 +1,40 @@
+{
+  "name": "Simulateur d'Impact Énergétique d'Équipements Domestiques",
+  "description": "Calculez la consommation électrique estimée et l",
+  "theme": "calculator",
+  "design_theme": "solarpunk-signal",
+  "structure_preset": "split-command",
+  "render_direction": "worksheet-flow",
+  "page_blueprint": "signal-matrix",
+  "language": "fr",
+  "country": "FR",
+  "url": null,
+  "expected_url": "https://simulateur-d-impact-energetique-d-equipements-d-42d84224.onrender.com",
+  "created": "2026-04-30T03:38:33.001986+00:00",
+  "owner_user_id": "user-1774822953462",
+  "owner_username": "admin",
+  "owner_display_name": "Administrator",
+  "status": "generated",
+  "run_id": "run-1777520182905",
+  "publish_target": "render",
+  "mode": "production",
+  "github": {
+    "status": "pending"
+  },
+  "deployment": {
+    "status": "pending"
+  },
+  "qa": {
+    "status": "pending"
+  },
+  "features": [
+    "Hero pattern: split",
+    "Proof module: metrics",
+    "Design theme: Solarpunk Signal",
+    "Render direction: Worksheet Flow",
+    "Page blueprint: Signal Matrix",
+    "Runtime mode: energy_score_calculator",
+    "Generation mode: direct_html",
+    "Artifact rendered, awaiting QA and deployment"
+  ]
+}
