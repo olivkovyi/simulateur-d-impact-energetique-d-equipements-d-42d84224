@@ -1,21 +1,24 @@
 {
-  "run_id": "run-1777520182905",
-  "job_index": 2,
+  "run_id": "run-1779029361518",
+  "job_index": 1,
   "params": {
     "owner_user_id": "user-1774822953462",
     "owner_username": "admin",
     "owner_display_name": "Administrator",
-    "count": 3,
+    "count": 1,
     "archetype": "calculator",
-    "market": "France",
+    "market": "Growth republish",
     "language": "fr",
     "country": "FR",
-    "brief": "Permet aux utilisateurs de sélectionner des appareils, d'entrer des données d'utilisation et d'obtenir un rap…",
-    "notes": "Calculez la consommation électrique estimée et l'impact environnemental de vos appareils électroménagers pour faire des choix éclairés.\nDestiné aux consommateurs soucieux de leur budget et de l'écologie. Interface claire et informative. Thème 'Solarpunk Signal' pour évoquer l'optimisme environnemental et la technologie propre.",
-    "import_notes": "",
-    "growth_job_id": "",
-    "growth_slug": "",
-    "growth_kind": "",
+    "brief": "Calculez la consommation électrique estimée et l",
+    "notes": "Growth module republish of an updated local artifact.",
+    "import_notes": "Growth module republish of an updated local artifact.",
+    "growth_job_id": "growth-1779029225049",
+    "growth_slug": "simulateur-d-impact-energetique-d-equipements-d-42d84224",
+    "growth_kind": "affiliate",
+    "external_site_request_id": "",
+    "external_client_ref": "",
+    "external_source_label": "",
     "dashboard_mode": "builder",
     "network_site_format": "forum",
     "network_primary_topic": "",
@@ -32,13 +35,14 @@
     "network_model_growth": "google/gemini-2.5-flash-lite:nitro",
     "network_blueprint_id": "",
     "mode": "production",
-    "run_kind": "generated_batch",
+    "run_kind": "import_deploy",
     "publish_target": "render",
     "requested_publish_target": "render",
+    "allow_url_fallback": false,
     "railway_project_id_override": "",
     "railway_environment_id_override": "",
-    "railway_service_id_override": "",
-    "railway_service_name_override": "",
+    "railway_service_id_override": "srv-d7pcuhpf9bms73afrkig",
+    "railway_service_name_override": "simulateur-d-impact-energetique-d-equipements-d-42d84224",
     "github_repo_private": true,
     "stage_models": {
       "ideation": "google/gemini-2.5-flash-lite:nitro",
@@ -47,255 +51,33 @@
       "qa": "anthropic/claude-haiku-4.5",
       "escalation": "anthropic/claude-sonnet-4.6"
     },
-    "archetype_display": "mixed batch",
+    "archetype_display": "file deploy",
     "archetype_mix": [
-      "generator",
-      "calculator",
-      "tool"
+      "imported"
     ],
-    "forced_design_theme": "solarpunk-signal",
-    "forced_structure_preset": "split-command",
+    "forced_slug": "simulateur-d-impact-energetique-d-equipements-d-42d84224",
     "site_idea_title": "Simulateur d'Impact Énergétique d'Équipements Domestiques",
-    "site_idea_summary": "Calculez la consommation électrique estimée et l'impact environnemental de vos appareils électroménagers pour faire des choix éclairés."
+    "site_idea_summary": "Calculez la consommation électrique estimée et l",
+    "import_source_path": "/var/lib/utility-site-studio/data/growth-republish/growth-1779029225049/simulateur-d-impact-energetique-d-equipements-d-42d84224",
+    "import_root_path": "/var/lib/utility-site-studio/data/growth-republish/growth-1779029225049/simulateur-d-impact-energetique-d-equipements-d-42d84224",
+    "import_analysis_model": "preserved-analysis"
   },
-  "site_spec": {
-    "slug": "simulateur-d-impact-energetique-d-equipements-d-42d84224",
-    "theme": {
-      "name": "Solarpunk Signal",
-      "slug": "solarpunk-signal",
-      "eyebrow": "Bright Optimism",
-      "family": "solarpunk-signal",
-      "moods": [
-        "optimistic",
-        "green",
-        "smart",
-        "uplifting"
-      ],
-      "archetypes": [
-        "tool",
-        "calculator",
-        "generator"
-      ],
-      "niches": [
-        "eco tools",
-        "mobility",
-        "energy",
-        "wellness",
-        "consumer utility"
-      ],
-      "keywords": [
-        "solar",
-        "green",
-        "future",
-        "optimism",
-        "energy"
-      ],
-      "token_index": [
-        "bright",
-        "calculator",
-        "consumer",
-        "eco",
-        "energy",
-        "future",
-        "generator",
-        "green",
-        "mobility",
-        "optimism",
-        "optimistic",
-        "signal",
-        "smart",
-        "solar",
-        "solarpunk",
-        "tool",
-        "tools",
-        "uplifting",
-        "utility",
-        "wellness"
-      ],
-      "font_embed": "https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap",
-      "display_font": "\"Sora\", sans-serif",
-      "body_font": "\"Inter\", sans-serif",
-      "layout": "split",
-      "card_style": "glass",
-      "button_style": "gradient",
-      "decor_style": "orbs",
-      "hero_template": "1.08fr 0.92fr",
-      "seo_template": "1.18fr 0.82fr",
-      "feature_columns": 3,
-      "faq_columns": 3,
-      "hero_min_height": "78vh",
-      "panel_radius": "28px",
-      "card_radius": "26px",
-      "chip_radius": "999px",
-      "button_radius": "18px",
-      "outline_width": "1px",
-      "backdrop_blur": "22px",
-      "palette": {
-        "bg": "linear-gradient(150deg, #052e16 0%, #15803d 38%, #fde68a 100%)",
-        "surface": "rgba(5, 46, 22, 0.72)",
-        "surface_border": "rgba(253,224,71,0.18)",
-        "text": "#f0fdf4",
-        "muted": "#d1fae5",
-        "accent": "#fde047",
-        "accent_alt": "#86efac",
-        "hero_glow": "rgba(253, 224, 71, 0.18)",
-        "button_text": "#2a2104",
-        "panel_alt": "rgba(255,255,255,0.05)",
-        "shadow": "0 28px 92px rgba(3, 18, 9, 0.34)",
-        "input_fill": "rgba(255,255,255,0.05)"
-      }
-    },
-    "structure": {
-      "name": "Split Command",
-      "slug": "split-command",
-      "hero_variant": "split",
-      "proof_variant": "metrics",
-      "section_order": [
-        "features",
-        "proof",
-        "faq",
-        "seo"
-      ],
-      "feature_columns": 3,
-      "faq_columns": 3,
-      "family": "hero-first",
-      "moods": [
-        "clean",
-        "balanced",
-        "conversion"
-      ],
-      "archetypes": [
-        "tool",
-        "calculator",
-        "generator"
-      ],
-      "niches": [
-        "general utility",
-        "comparison",
-        "services"
-      ],
-      "keywords": [
-        "hero",
-        "conversion",
-        "balanced",
-        "operator"
-      ],
-      "token_index": [
-        "balanced",
-        "calculator",
-        "clean",
-        "command",
-        "comparison",
-        "conversion",
-        "faq",
-        "features",
-        "first",
-        "general",
-        "generator",
-        "hero",
-        "metrics",
-        "operator",
-        "proof",
-        "seo",
-        "services",
-        "split",
-        "tool",
-        "utility"
-      ]
-    },
-    "render_direction": "worksheet-flow",
-    "render_direction_name": "Worksheet Flow",
-    "page_blueprint": "signal-matrix",
-    "page_blueprint_name": "Signal Matrix",
+  "import_analysis": {
     "title": "Simulateur d'Impact Énergétique d'Équipements Domestiques",
-    "tagline": "Votre Bilan Énergétique Personnalisé",
     "description": "Calculez la consommation électrique estimée et l",
-    "feature_prefix": "Bloc",
-    "action": "Utiliser l'outil",
-    "cta_primary": "Calculer mon impact",
-    "cta_secondary": "Consulter la FAQ",
-    "inputs": [
-      {
-        "id": "amount",
-        "label": "Montant de base",
-        "type": "number",
-        "placeholder": "7500",
-        "weight": 1.0
-      },
-      {
-        "id": "duration",
-        "label": "Durée estimée",
-        "type": "number",
-        "placeholder": "12",
-        "weight": 0.42
-      },
-      {
-        "id": "plan",
-        "label": "Niveau de service",
-        "type": "select",
-        "options": [
-          {
-            "label": "Essentiel",
-            "value": 1.0
-          },
-          {
-            "label": "Performance",
-            "value": 1.18
-          },
-          {
-            "label": "Premium",
-            "value": 1.34
-          }
-        ],
-        "weight": 1.0
-      }
+    "summary": "Calculez la consommation électrique estimée et l",
+    "notes": "Growth module republish of an updated local artifact.",
+    "archetype": "calculator",
+    "language": "fr",
+    "country": "FR",
+    "market": "Growth republish",
+    "characteristics": [
+      "imported static site",
+      "ready file deploy",
+      "calculator"
     ],
-    "hero_metrics": [
-      {
-        "value": "Worksheet Flow",
-        "label": "Cadence"
-      },
-      {
-        "value": "3",
-        "label": "Entrées"
-      },
-      {
-        "value": "Résultat recommandé",
-        "label": "Sortie"
-      }
-    ],
-    "trust_labels": [
-      "Worksheet Flow",
-      "Calculer mon impact",
-      "Résultat recommandé",
-      "Utilitaire immédiat",
-      "Structure SEO claire"
-    ],
-    "result_label": "Résultat recommandé",
-    "result_unit": "EUR",
-    "runtime_mode": "energy_score_calculator",
-    "page_variant": "classic",
-    "faq_topic": "Simulateur d'Impact Énergétique d'Équipements Domestiques",
-    "faq_entries": [
-      {
-        "question": "Pourquoi utiliser cet outil pour Simulateur d'Impact Énergétique d'Équipements Domestiques ?",
-        "answer": "Il aide à cadrer le besoin rapidement et à orienter vers une prochaine action claire sur le marché France."
-      },
-      {
-        "question": "Le résultat est-il immédiat ?",
-        "answer": "Oui. L'interface est pensée pour une réponse rapide, lisible et exploitable dès la première interaction."
-      },
-      {
-        "question": "Cette page est-elle adaptée au SEO ?",
-        "answer": "Oui. La structure mélange utilité, clarté éditoriale et signaux de confiance sans surcharger l'expérience."
-      }
-    ],
-    "seo_paragraphs": [
-      "Cette page capte une intention forte autour de Simulateur d'Impact Énergétique d'Équipements Domestiques et la transforme en action utile pour un public situé sur France.",
-      "Le format hero-first accélère la compréhension, réduit les frictions et améliore la lisibilité sur mobile comme sur desktop.",
-      "Le socle reste volontairement simple pour faciliter les tests, la QA continue et les variations SEO."
-    ],
-    "document_html": "<!DOCTYPE html>\n<html lang=\"fr\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Simulateur d&#x27;Impact Énergétique d&#x27;Équipements Domestiques | Votre Bilan Énergétique Personnalisé</title>\n    <meta name=\"description\" content=\"Calculez la consommation électrique estimée et l\">\n    <style>\n        :root {\n            --primary-green: #008000;\n            --secondary-yellow: #FFD700;\n            --background-light: #F0F8F0;\n            --text-dark: #333;\n            --text-light: #fff;\n            --border-color: #A9D18E;\n            --shadow-color: rgba(0, 0, 0, 0.1);\n            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n        }\n\n        body {\n            margin: 0;\n            padding: 0;\n            box-sizing: border-box;\n            background-color: var(--background-light);\n            color: var(--text-dark);\n            line-height: 1.6;\n            display: flex;\n            flex-direction: column;\n            align-items: center;\n        }\n\n        header {\n            width: 100%;\n            background: linear-gradient(135deg, var(--primary-green) 0%, #33B249 100%);\n            color: var(--text-light);\n            padding: 2rem 0;\n            text-align: center;\n            box-shadow: 0 4px 8px var(--shadow-color);\n        }\n\n        header h1 {\n            margin: 0;\n            font-size: 2.8rem;\n            letter-spacing: -0.05em;\n        }\n\n        header p {\n            font-size: 1.2rem;\n            opacity: 0.9;\n            max-width: 800px;\n            margin: 1rem auto 0;\n        }\n\n        .container {\n            width: 90%;\n            max-width: 1000px;\n            margin: 2rem auto;\n            display: grid;\n            grid-template-columns: 1fr;\n            gap: 2rem;\n        }\n\n        @media (min-width: 768px) {\n            .container {\n                grid-template-columns: 2fr 1fr;\n            }\n        }\n\n        .tool-section, .info-section {\n            background-color: var(--text-light);\n            padding: 2rem;\n            border-radius: 8px;\n            box-shadow: 0 2px 10px var(--shadow-color);\n        }\n\n        .tool-section h2, .info-section h3 {\n            color: var(--primary-green);\n            margin-top: 0;\n            font-size: 1.8rem;\n            border-bottom: 2px solid var(--border-color);\n            padding-bottom: 0.5rem;\n            margin-bottom: 1.5rem;\n        }\n\n        form label {\n            display: block;\n            margin-bottom: 0.5rem;\n            font-weight: bold;\n            color: var(--text-dark);\n        }\n\n        form select, form input[type=\"number\"] {\n            width: calc(100% - 20px);\n            padding: 10px;\n            margin-bottom: 1.5rem;\n            border: 1px solid var(--border-color);\n            border-radius: 4px;\n            box-sizing: border-box;\n            font-size: 1rem;\n        }\n\n        form button {\n            background-color: var(--primary-green);\n            color: var(--text-light);\n            padding: 12px 25px;\n            border: none;\n            border-radius: 5px;\n            cursor: pointer;\n            font-size: 1.1rem;\n            font-weight: bold;\n            transition: background-color 0.3s ease;\n        }\n\n        form button:hover {\n            background-color: #33B249;\n        }\n\n        #tool-result {\n            margin-top: 2rem;\n            padding: 1.5rem;\n            background-color: #e9f5e9;\n            border: 1px solid var(--border-color);\n            border-radius: 8px;\n            font-size: 1.1rem;\n            color: var(--text-dark);\n        }\n\n        #tool-result h4 {\n            color: var(--primary-green);\n            margin-top: 0;\n        }\n\n        .info-section {\n            background-color: #f9fdf9;\n            border-left: 5px solid var(--primary-green);\n        }\n\n        .info-section ul {\n            list-style: none;\n            padding: 0;\n        }\n\n        .info-section li {\n            margin-bottom: 0.8rem;\n            padding-left: 1.5rem;\n            position: relative;\n        }\n\n        .info-section li::before {\n            content: '🌿';\n            position: absolute;\n            left: 0;\n            color: var(--primary-green);\n        }\n\n        .call-to-action {\n            text-align: center;\n            margin: 3rem 0;\n            padding: 2rem;\n            background: linear-gradient(45deg, #CCE6CC 0%, #E0F2E0 100%);\n            border-radius: 8px;\n            box-shadow: 0 2px 8px var(--shadow-color);\n            width: 90%;\n            max-width: 800px;\n        }\n\n        .call-to-action h3 {\n            color: var(--primary-green);\n            font-size: 2rem;\n            margin-bottom: 1rem;\n        }\n\n        .call-to-action p {\n            font-size: 1.1rem;\n            margin-bottom: 2rem;\n        }\n\n        .call-to-action button {\n            background-color: var(--secondary-yellow);\n            color: var(--text-dark);\n            padding: 15px 30px;\n            border: none;\n            border-radius: 5px;\n            cursor: pointer;\n            font-size: 1.2rem;\n            font-weight: bold;\n            transition: background-color 0.3s ease;\n        }\n\n        .call-to-action button:hover {\n            background-color: #FFEA00;\n        }\n\n        footer {\n            width: 100%;\n            background-color: var(--text-dark);\n            color: var(--text-light);\n            padding: 2rem 0;\n            text-align: center;\n            margin-top: 3rem;\n        }\n\n        .seo-section {\n            width: 90%;\n            max-width: 1000px;\n            margin: 2rem auto;\n            padding: 1.5rem;\n            background-color: #f0f0f0;\n            border-radius: 8px;\n            border: 1px solid #ddd;\n            font-size: 0.9rem;\n            color: #555;\n        }\n\n        .seo-section h3 {\n            color: var(--primary-green);\n            font-size: 1.4rem;\n            margin-bottom: 1rem;\n        }\n    </style>\n    <meta name=\"robots\" content=\"index, follow\">\n    <link rel=\"canonical\" href=\"https://simulateur-d-impact-energetique-d-equipements-d-42d84224.onrender.com\">\n    <meta property=\"og:title\" content=\"Simulateur d&#x27;Impact Énergétique d&#x27;Équipements Domestiques\">\n    <meta property=\"og:description\" content=\"Calculez la consommation électrique estimée et l\">\n    <meta property=\"og:url\" content=\"https://simulateur-d-impact-energetique-d-equipements-d-42d84224.onrender.com\">\n    <meta property=\"og:type\" content=\"website\">\n    <script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"WebApplication\", \"name\": \"Simulateur d'Impact Énergétique d'Équipements Domestiques\", \"description\": \"Calculez la consommation électrique estimée et l\", \"url\": \"https://simulateur-d-impact-energetique-d-equipements-d-42d84224.onrender.com\", \"applicationCategory\": \"UtilityApplication\", \"operatingSystem\": \"Web Browser\"}</script>\n</head>\n<body data-site-slug=\"simulateur-d-impact-energetique-d-equipements-d-42d84224\" data-runtime-mode=\"energy_score_calculator\">\n    <header>\n        <h1>Simulateur d'Impact Énergétique Domestique</h1>\n        <p>Estimez la consommation électrique et l'empreinte carbone de vos appareils pour des choix plus verts et économes. Agissez pour un futur durable, dès aujourd'hui.</p>\n    </header>\n\n    <div class=\"container\">\n        <div class=\"tool-section\">\n            <h2>Votre Bilan Énergétique Personnalisé</h2>\n            <form id=\"tool-form\">\n                <label for=\"device\">Sélectionnez votre appareil :</label>\n                <select id=\"device\" name=\"device\">\n                    <option value=\"frigo\">Réfrigérateur (150W)</option>\n                    <option value=\"lave-linge\">Lave-linge (2000W)</option>\n                    <option value=\"tele\">Télévision (100W)</option>\n                    <option value=\"ordinateur\">Ordinateur Portable (50W)</option>\n                    <option value=\"four\">Four Électrique (2500W)</option>\n                    <option value=\"micro-ondes\">Micro-ondes (1000W)</option>\n                    <option value=\"bouilloire\">Bouilloire (2200W)</option>\n                    <option value=\"seche-linge\">Sèche-linge (2500W)</option>\n                    <option value=\"lave-vaisselle\">Lave-vaisselle (1500W)</option>\n                    <option value=\"fer-a-repasser\">Fer à repasser (1800W)</option>\n                </select>\n\n                <label for=\"usage-hours\">Heures d'utilisation par jour :</label>\n                <input type=\"number\" id=\"usage-hours\" name=\"usage-hours\" min=\"0\" max=\"24\" value=\"1\">\n\n                <label for=\"usage-days\">Jours d'utilisation par semaine :</label>\n                <input type=\"number\" id=\"usage-days\" name=\"usage-days\" min=\"0\" max=\"7\" value=\"7\">\n                \n                <button type=\"submit\" id=\"tool-submit\">Calculer mon impact</button>\n            </form>\n\n            <div id=\"tool-result\">\n                <h4>Vos Résultats :</h4>\n                <p>Sélectionnez un appareil et entrez vos données pour estimer sa consommation.</p>\n            </div>\n        </div>\n\n        <div class=\"info-section\">\n            <h3>Pourquoi calculer ?</h3>\n            <p>Comprendre la consommation de vos appareils est le premier pas vers une gestion énergétique plus intelligente.</p>\n            <ul>\n                <li>🌿 Réduisez vos factures d'électricité.</li>\n                <li>🌿 Diminuez votre empreinte carbone.</li>\n                <li>🌿 Identifiez les appareils énergivores.</li>\n                <li>🌿 Prenez des décisions d'achat éclairées.</li>\n                <li>🌿 Contribuez à un avenir plus vert.</li>\n            </ul>\n        </div>\n    </div>\n\n    <div class=\"call-to-action\">\n        <h3>Prêt à optimiser votre consommation ?</h3>\n        <p>Chaque petit geste compte. Découvrez comment des ajustements simples peuvent faire une grande différence pour votre portefeuille et la planète.</p>\n        <button data-affiliate-slot=\"premium-guide-cta\">Découvrir les Astuces Éco-Gestes</button>\n    </div>\n\n    <div class=\"seo-section\">\n        <h3>Recherches associées et informations complémentaires</h3>\n        <p>Vous cherchez à <strong>réduire votre facture d'électricité</strong> ou à mieux comprendre votre <strong>consommation énergétique domestique</strong> ? Notre simulateur vous aide à calculer précisément l'<strong>impact écologique de vos appareils électroménagers</strong>. Que ce soit pour un <strong>lave-linge économe</strong>, un <strong>réfrigérateur basse consommation</strong>, ou simplement estimer le <strong>coût de l'énergie</strong> de votre télévision, nous vous offrons des données claires pour faire des <strong>économies d'énergie</strong>. Apprenez à <strong>optimiser votre consommation électrique</strong> et à réduire votre <strong>empreinte carbone maison</strong> en France. Notre outil de <strong>calcul d'énergie</strong> est idéal pour les foyers soucieux de leur budget et de l'environnement, cherchant des solutions pour une <strong>maison plus verte</strong> et des <strong>appareils moins énergivores</strong>. Utilisez ce <strong>simulateur d'électricité</strong> pour des conseils pratiques sur la <strong>gestion énergétique</strong> et la <strong>sobriété énergétique</strong>.</p>\n    </div>\n\n    <footer>\n        <p>&copy; 2023 Simulateur Énergétique. Tous droits réservés.</p>\n    </footer>\n\n    <script>\n        document.addEventListener('DOMContentLoaded', () => {\n            const form = document.getElementById('tool-form');\n            const resultDiv = document.getElementById('tool-result');\n\n            const devicePower = {\n                \"frigo\": 150,\n                \"lave-linge\": 2000,\n                \"tele\": 100,\n                \"ordinateur\": 50,\n                \"four\": 2500,\n                \"micro-ondes\": 1000,\n                \"bouilloire\": 2200,\n                \"seche-linge\": 2500,\n                \"lave-vaisselle\": 1500,\n                \"fer-a-repasser\": 1800\n            };\n\n            const carbonIntensityFrance = 0.057; // kg CO2e / kWh (valeur indicative pour la France, peu carbonée)\n            const electricityCostFrance = 0.25; // € / kWh (valeur indicative pour la France)\n\n            form.addEventListener('submit', (event) => {\n                event.preventDefault();\n\n                const deviceSelect = document.getElementById('device');\n                const selectedDevice = deviceSelect.value;\n                const hoursPerDay = parseFloat(document.getElementById('usage-hours').value);\n                const daysPerWeek = parseFloat(document.getElementById('usage-days').value);\n\n                if (isNaN(hoursPerDay) || isNaN(daysPerWeek) || hoursPerDay < 0 || daysPerWeek < 0) {\n                    resultDiv.innerHTML = \"<h4>Erreur de saisie :</h4><p>Veuillez entrer des nombres valides pour les heures et les jours.</p>\";\n                    return;\n                }\n\n                const powerWatts = devicePower[selectedDevice];\n                const powerKw = powerWatts / 1000; // Convertir en kW\n\n                const usageHoursPerYear = hoursPerDay * daysPerWeek * (365 / 7); // Heures par an\n                const annualConsumptionKWh = powerKw * usageHoursPerYear;\n                const annualCost = annualConsumptionKWh * electricityCostFrance;\n                const annualCarbonImpactKg = annualConsumptionKWh * carbonIntensityFrance;\n\n                resultDiv.innerHTML = `\n                    <h4>Résultats pour votre ${deviceSelect.options[deviceSelect.selectedIndex].text} :</h4>\n                    <p><strong>Consommation annuelle estimée :</strong> ${annualConsumptionKWh.toFixed(2)} kWh</p>\n                    <p><strong>Coût annuel estimé :</strong> ${annualCost.toFixed(2)} €</p>\n                    <p><strong>Impact carbone annuel estimé :</strong> ${annualCarbonImpactKg.toFixed(2)} kg de CO2e</p>\n                    <p class=\"small-text\">Ces estimations sont basées sur une puissance moyenne de l'appareil et les tarifs indicatifs de l'électricité en France.</p>\n                `;\n            });\n        });\n    </script>\n<div id=\"qa-smoke-result\" hidden></div>\n<script id=\"farmbuilder-affiliate-helper\">\n(function () {\n  window.__UTILITY_AFFILIATE_MAP = window.__UTILITY_AFFILIATE_MAP || {};\n  document.addEventListener(\"click\", function (event) {\n    const target = event.target.closest(\"[data-affiliate-slot]\");\n    if (!target) return;\n    const slot = target.getAttribute(\"data-affiliate-slot\");\n    const href = window.__UTILITY_AFFILIATE_MAP[slot];\n    if (!href) return;\n    if (target.tagName && target.tagName.toLowerCase() === \"a\") {\n      target.setAttribute(\"href\", href);\n      target.setAttribute(\"rel\", \"nofollow sponsored noopener noreferrer\");\n      return;\n    }\n    event.preventDefault();\n    window.open(href, \"_blank\", \"noopener\");\n  }, true);\n})();\n</script>\n<script id=\"farmbuilder-functional-qa\">\n(function () {\n  function marker() {\n    let node = document.getElementById(\"qa-smoke-result\");\n    if (node) return node;\n    node = document.createElement(\"div\");\n    node.id = \"qa-smoke-result\";\n    node.hidden = true;\n    document.body.appendChild(node);\n    return node;\n  }\n\n  let qaFinished = false;\n  let qaWatchdog = null;\n\n  function normalize(text) {\n    return String(text || \"\").replace(/\\s+/g, \" \").trim();\n  }\n\n  function findForm() {\n    return document.getElementById(\"tool-form\") || document.querySelector(\"form\");\n  }\n\n  function findResult() {\n    return (\n      document.getElementById(\"tool-result\") ||\n      document.querySelector(\"[data-result]\") ||\n      document.querySelector(\".tool-result, .result-card, .result, .results, .output, .preview, .diagnostic, .analysis\")\n    );\n  }\n\n  function primaryAction(form) {\n    if (!form) return null;\n    return (\n      document.getElementById(\"tool-submit\") ||\n      form.querySelector(\"#tool-submit\") ||\n      form.querySelector(\"[data-primary-action]\") ||\n      form.querySelector(\"button[type=submit]\") ||\n      form.querySelector(\"button\") ||\n      form.querySelector(\"input[type=submit]\")\n    );\n  }\n\n  function resultSignature(node) {\n    if (!node) return \"\";\n    const text = normalize(node.textContent);\n    const html = normalize(node.innerHTML).slice(0, 600);\n    return `${text}||${html}`;\n  }\n\n  function resultHeadline(node) {\n    if (!node) return \"\";\n    const heading = node.querySelector(\"h1, h2, h3, strong, b\");\n    return normalize(heading ? heading.textContent : \"\");\n  }\n\n  function sampleText(field) {\n    const key = `${field.id || \"\"} ${field.name || \"\"} ${field.placeholder || \"\"}`.toLowerCase();\n    if (/email/.test(key)) return \"bonjour@example.com\";\n    if (/url|site|website|lien/.test(key)) return \"https://example.com/offre-solaire\";\n    if (/phone|tel|mobile/.test(key)) return \"0612345678\";\n    if (/ville|city|localisation|location|region|departement|postal/.test(key)) return \"Paris\";\n    if (/orientation/.test(key)) return \"sud\";\n    if (/keyword|theme|topic|sujet|subject/.test(key)) return \"energie solaire domestique\";\n    if (/titre|title/.test(key)) return \"Simulateur solaire maison\";\n    if (/nom|name|project/.test(key)) return \"Projet Horizon\";\n    if (/description|notes|content|message/.test(key)) return \"Maison individuelle exposee sud avec toiture exploitable.\";\n    return field.placeholder || \"France\";\n  }\n\n  function sampleNumber(field) {\n    const key = `${field.id || \"\"} ${field.name || \"\"}`.toLowerCase();\n    if (/inclinaison|angle|slope/.test(key)) return \"30\";\n    if (/surface|size|m2|sqm/.test(key)) return \"28\";\n    if (/annee|year/.test(key)) return \"2024\";\n    if (/prix|price|budget|cost|amount|montant/.test(key)) return \"12000\";\n    const min = Number(field.min || \"\");\n    const max = Number(field.max || \"\");\n    if (Number.isFinite(min) && Number.isFinite(max) && max >= min) {\n      return String(Math.min(max, Math.max(min, min + Math.round((max - min) * 0.35))));\n    }\n    if (Number.isFinite(min)) return String(Math.max(min, 12));\n    if (Number.isFinite(max)) return String(Math.min(max, 12));\n    return field.value || \"12\";\n  }\n\n  function applySample(field) {\n    const tag = (field.tagName || \"\").toLowerCase();\n    const type = (field.type || \"\").toLowerCase();\n    if (field.disabled) return;\n    if (type === \"hidden\" || type === \"submit\" || type === \"button\" || type === \"reset\" || type === \"image\" || type === \"file\") {\n      return;\n    }\n    const currentValue = normalize(field.value);\n    if (tag === \"select\") {\n      if (currentValue) return;\n      const option = Array.from(field.options || []).find((item) => item.value && !item.disabled) || field.options[0];\n      if (option) field.value = option.value;\n      return;\n    }\n    if (type === \"checkbox\") {\n      if (field.checked) return;\n      field.checked = true;\n      return;\n    }\n    if (type === \"radio\") {\n      if (field.checked) return;\n      field.checked = true;\n      return;\n    }\n    if (type === \"date\") {\n      if (currentValue) return;\n      field.value = \"2026-03-01\";\n      return;\n    }\n    if (type === \"email\") {\n      if (currentValue) return;\n      field.value = \"bonjour@example.com\";\n      return;\n    }\n    if (type === \"url\") {\n      if (currentValue) return;\n      field.value = \"https://example.com/offre-solaire\";\n      return;\n    }\n    if (type === \"tel\") {\n      if (currentValue) return;\n      field.value = \"0612345678\";\n      return;\n    }\n    if (type === \"color\") {\n      if (currentValue) return;\n      field.value = \"#2f855a\";\n      return;\n    }\n    if (type === \"number\" || type === \"range\") {\n      if (currentValue) return;\n      field.value = sampleNumber(field);\n      return;\n    }\n    if (currentValue) return;\n    field.value = sampleText(field);\n  }\n\n  function stamp(status, detail, headline, primary) {\n    if (qaFinished) return;\n    qaFinished = true;\n    if (qaWatchdog) {\n      window.clearTimeout(qaWatchdog);\n      qaWatchdog = null;\n    }\n    const node = marker();\n    node.dataset.status = status;\n    node.dataset.mode = \"native-form\";\n    node.dataset.detail = detail || \"\";\n    node.dataset.headline = headline || \"\";\n    node.dataset.primary = primary || \"\";\n    node.dataset.viewport = window.innerWidth <= 640 ? \"mobile\" : \"desktop\";\n    window.setTimeout(function () {\n      try {\n        window.stop();\n      } catch (_error) {}\n    }, 0);\n  }\n\n  function installModalGuards() {\n    const noop = function () {};\n    const approve = function () { return true; };\n    const empty = function () { return \"\"; };\n    try { window.alert = noop; } catch (_error) {}\n    try { window.confirm = approve; } catch (_error) {}\n    try { window.prompt = empty; } catch (_error) {}\n  }\n\n  function triggerAction(form, action) {\n    try {\n      if (typeof form.requestSubmit === \"function\") {\n        form.requestSubmit(action || undefined);\n        return;\n      }\n    } catch (_error) {}\n    if (action && typeof action.click === \"function\") {\n      action.click();\n      return;\n    }\n    form.dispatchEvent(new Event(\"submit\", { bubbles: true, cancelable: true }));\n  }\n\n  function inspectResult(before, attemptsLeft) {\n    const result = findResult();\n    if (!result) {\n      stamp(\"fail\", \"La zone de resultat est introuvable.\", \"\");\n      return;\n    }\n    const after = resultSignature(result);\n    const text = normalize(result.textContent);\n    if (after && after !== before && text.length >= 24) {\n      const primary = result.querySelector(\"a[href], button[data-href], [data-primary-url]\") || document.querySelector(\"#tool-result a[href]\");\n      stamp(\"pass\", \"Le formulaire natif a mis a jour la zone de resultat.\", resultHeadline(result), primary ? (primary.getAttribute(\"href\") || primary.getAttribute(\"data-primary-url\") || \"\") : \"\");\n      return;\n    }\n    if (attemptsLeft > 0) {\n      window.setTimeout(function () {\n        inspectResult(before, attemptsLeft - 1);\n      }, 250);\n      return;\n    }\n    stamp(\"fail\", \"La zone de resultat n'a pas renvoye de contenu exploitable.\", resultHeadline(result));\n  }\n\n  function runSmoke() {\n    const params = new URLSearchParams(window.location.search);\n    if (params.get(\"__qa\") !== \"functional\") return;\n    qaWatchdog = window.setTimeout(function () {\n      stamp(\"fail\", \"QA smoke timed out before the page reported a usable result.\", \"\");\n    }, 7000);\n    const form = findForm();\n    if (!form) {\n      stamp(\"fail\", \"Le formulaire principal est introuvable.\", \"\");\n      return;\n    }\n    const result = findResult();\n    const before = resultSignature(result);\n    installModalGuards();\n    try {\n      form.querySelectorAll(\"input, select, textarea\").forEach(applySample);\n    } catch (error) {\n      stamp(\"fail\", error && error.message ? `QA smoke sample failed: ${error.message}` : \"QA smoke sample failed before submit.\", \"\");\n      return;\n    }\n    const action = primaryAction(form);\n    try {\n      triggerAction(form, action);\n    } catch (error) {\n      stamp(\"fail\", error && error.message ? `QA smoke submit failed: ${error.message}` : \"QA smoke submit failed.\", \"\");\n      return;\n    }\n    inspectResult(before, 10);\n  }\n\n  window.addEventListener(\"error\", function (event) {\n    const message = event && event.message ? event.message : \"JavaScript runtime error during QA smoke.\";\n    stamp(\"fail\", `QA smoke JS error: ${message}`, \"\");\n  }, { once: true });\n\n  window.addEventListener(\"unhandledrejection\", function (event) {\n    const reason = event && event.reason;\n    const detail = typeof reason === \"string\"\n      ? reason\n      : reason && reason.message\n        ? reason.message\n        : \"Unhandled promise rejection during QA smoke.\";\n    stamp(\"fail\", `QA smoke rejection: ${detail}`, \"\");\n  }, { once: true });\n\n  if (document.readyState === \"loading\") {\n    document.addEventListener(\"DOMContentLoaded\", function () {\n      window.setTimeout(runSmoke, 60);\n    }, { once: true });\n  } else {\n    window.setTimeout(runSmoke, 60);\n  }\n})();\n</script>\n</body>\n</html>",
-    "generation_mode": "direct_html"
-  }
+    "suggested_slug": "simulateur-d-impact-energetique-d-equipements-d-42d84224"
+  },
+  "source_path": "/var/lib/utility-site-studio/data/growth-republish/growth-1779029225049/simulateur-d-impact-energetique-d-equipements-d-42d84224",
+  "deploy_root": "/var/lib/utility-site-studio/data/growth-republish/growth-1779029225049/simulateur-d-impact-energetique-d-equipements-d-42d84224"
 }
